@@ -1,0 +1,216 @@
+{
+	"id": "DrillpathBox",
+	"version": "1.0.0",
+	"name": "Drill path box",
+	"description": "A container for the options of the drill path ",
+	"newInstancePrefix": "Drillpath_",
+	"icon": "https://www.sample.com/customwidgets/coloredbox/icon.png",
+	"vendor": "Danny Brassil",
+	"eula": "",
+	"license": "",
+	"webcomponents": [
+		{
+			"kind": "main",
+			"tag": "com-sap-sample-drillpathbox",
+			"url": "/drillpathbox_main.js",
+			"integrity": "",
+			"ignoreIntegrity": true
+		 },
+		 {
+			"kind": "styling",
+			"tag": "drillpathbox-style",
+			"url": "/drillpathbox_styling.js",
+			"integrity": "",
+			"ignoreIntegrity": true
+		 }
+	],
+	"properties": {
+		"color": {
+			"type": "string",
+			"description": "Background color",
+			"default": "red"
+		},
+		"borderRadius": {
+			"type": "number",
+			"description": "Opacity",
+			"default": 1
+		},
+		"width": {
+			"type": "integer",
+			"default": 768
+		},
+		"height": {
+			"type": "integer",
+			"default": 32
+		},
+		"selectedItem":{
+			"type": "string"
+		},
+		"drillpathOptions":{
+			"type":"string[]",
+			"default": ["val 1|val 1", "val 2|val 2","val 3|val 3", "val 4|val 4","val 5|val 5", "val 6|val 6"]
+		},
+		"selectedItemDrillpathIndex": {
+			"type": "string",
+			"description": "the position of the selected item in the drillpath",
+			"default": "0"
+		},
+		"selectedItemID": {
+			"type": "string",
+			"description": "the ID of the selected item in the drillpath",
+			"default": ""
+		},
+		"selectedItemDescription": {
+			"type": "string",
+			"description": "the description of the selected item in the drillpath",
+			"default": ""
+		},
+		"isLastDimensionInPath": {
+			"type": "boolean",
+			"description": "returns true or false whether the selected drillpath dimension is the last on in the drillpath ",
+			"default": false
+		},
+		"nextDimensionIndex": {
+			"type": "string",
+			"description": "the index of the next dimension ",
+			"default": ""
+		}
+		
+
+	},
+	"methods": {
+		"setColor": {
+			"description": "Sets the background color.",
+			"parameters": [
+				{
+					"name": "newColor",
+					"type": "string",
+					"description": "The new background color"
+				}
+			],
+			"body": "this.color = newColor;"
+		},
+		"getColor": {
+			"returnType": "string",
+			"description": "Returns the background color.",
+			"body": "return this.color;"
+		},
+		"setBorderRadius": {
+			"description": "Sets the border radius.",
+			"parameters": [
+				{
+					"name": "newBorderRadius",
+					"type": "number",
+					"description": "The new border radius"
+				}
+			],
+			"body": "this.borderRadius = newBorderRadius;"
+		},
+		"getBorderRadius": {
+			"returnType": "number",
+			"description": "Returns the border radius.",
+			"body": "return this.borderRadius;"
+		},
+		"setSelectedItemID": {
+			"description": "Sets the selected item ID in the array.",
+			"parameters": [
+				{
+					"name": "newSelectedItemID",
+					"type": "string",
+					"description": "The new Selected item in the drill path"
+				}
+			],
+			"body": "this.selectedItemID = newSelectedItemID;"
+		},
+		"getSelectedItemID": {
+			"returnType": "string",
+			"description": "Returns the selected item ID in the drillpath.",
+			"body": "return this.selectedItemID;"
+		},
+		"setSelectedItemDescription": {
+			"description": "Sets the selected item description in the array.",
+			"parameters": [
+				{
+					"name": "newSelectedItemDescription",
+					"type": "string",
+					"description": "The new Selected item description in the drill path"
+				}
+			],
+			"body": "this.selectedItemDescription = newSelectedItemDescription;"
+		},
+		"getSelectedItemDescription": {
+			"returnType": "string",
+			"description": "Returns the selected item Description in the drillpath.",
+			"body": "return this.selectedItemDescription;"
+		},
+		"setSelectedItemDrillpathIndex": {
+			"description": "Sets the selected item Index in the array.",
+			"parameters": [
+				{
+					"name": "newSelectedItemDrillpathIndex",
+					"type": "string",
+					"description": "The new Selected item index in the drill path"
+				}
+			],
+			"body": "this.selectedItemDrillpathIndex = newSelectedItemDrillpathIndex;"
+		},
+		"getSelectedItemDrillpathIndex": {
+			"returnType": "string",
+			"description": "Returns the selected item index in the drillpath.",
+			"body": "return this.selectedItemDrillpathIndex;"
+		},
+		"setDrillpathOptions": {
+			"description": "Sets the array that feeds the boxes in the drillpath.",
+			"parameters": [
+				{
+					"name": "newDrillpathOptions",
+					"type":"string[]",
+					"description": "The new array for the drillpath options"
+				}
+			],
+			"body": "this.drillpathOptions = newDrillpathOptions;"
+		},
+		"getDrillpathOptions": {
+			"returnType": "string[]",
+			"description": "Returns the drillpath options array.",
+			"body": "return this.drillpathOptions;"
+		},
+		"setisLastDimensionInPath": {
+			"description": "Sets true or false to if the selcted dimenion is the last in the drillpath",
+			"parameters": [
+				{
+					"name": "newisLastDimensionInPath",
+					"type":"boolean",
+					"description": "The new array for the drillpath options"
+				}
+			],
+			"body": "this.isLastDimensionInPath = newisLastDimensionInPath;"
+		},
+		"getisLastDimensionInPath": {
+			"returnType": "boolean",
+			"description": "Returns  true or false to if the selcted dimenion is the last in the drillpath",
+			"body": "return this.isLastDimensionInPath;"
+		},
+		"setNextDimensionIndex": {
+			"description": "Sets the next dimension in the drillpath.",
+			"parameters": [
+				{
+					"name": "newNextDimensionIndex",
+					"type": "string",
+					"description": "The new index of the next dimension color"
+				}
+			],
+			"body": "this.nextDimensionIndex = newNextDimensionIndex;"
+		},
+		"getNextDimensionIndex": {
+			"returnType": "string",
+			"description": "Returns the index of the next dimension.",
+			"body": "return this.nextDimensionIndex;"
+		}
+	},
+	"events": {
+		"onClick": {
+			"description": "Called when the user clicks."
+		}
+	}
+}
